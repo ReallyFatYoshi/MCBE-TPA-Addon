@@ -6,8 +6,8 @@ https://github.com/othneildrew/Best-README-Template
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-<a href="https://github.com/ReallyFatYoshi/addon-jam">
-    <img src="https://github.com/ReallyFatYoshi/addon-jam/blob/main/Behavour%20Pack/pack_icon.png?raw=true" alt="Logo" width="80" height="80">
+  <a href="https://github.com/ReallyFatYoshi/MCBE-TPA-Addon">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
   <h3 align="center"><u>MCBE TPA Add-on</u></h3>
 
