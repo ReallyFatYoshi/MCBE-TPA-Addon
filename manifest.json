@@ -1,0 +1,66 @@
+{
+    "format_version": 2,
+    "header": {
+      "name": "§l§aTPA §r§dAdd§7-§5on",
+      "description": "§eAdds TPA Commands to your game. Requires GameTest.\n§aCreatetd By Knight\n§bDiscord Tag: Knight#8191\n§bDiscord Server: https://discord.gg/38f4A5MD86",
+      "uuid": "7087985e-cda6-2080-d527-0f463f9d09d1",
+      "version": [
+        0,
+        1,
+        0
+      ],
+      "min_engine_version": [
+        1,
+        17,
+        0
+      ]
+    },
+    "modules": [
+      {
+        "type": "data",
+        "uuid": "ee64f71c-9dad-af4e-5a08-f3eaea1fac46",
+        "version": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "type": "javascript",
+        "uuid": "118af3b1-6576-ba9d-9bb4-3cf95b1ce4bf",
+        "version": [
+          1,
+          0,
+          0
+        ],
+        "entry": "scripts/main.js"
+      }
+    ],
+    "metadata": {
+      "authors": [
+        "Knight"
+      ],
+      "url": "https://github.com/MMike08/MCBE-TPA-system",
+      "license": "MIT"
+    },
+    "dependencies": [
+      {
+        "description": "Minecraft module, required to use the Minecraft module",
+        "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
+        "version": [
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "description": "GameTest module, required to use the GameTest module",
+        "uuid": "6f4b6893-1bb6-42fd-b458-7fa3d0c89616",
+        "version": [
+          0,
+          1,
+          0
+        ]
+      }
+    ]
+  }

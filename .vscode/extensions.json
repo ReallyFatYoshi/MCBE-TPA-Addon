@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "blockceptionltd.blockceptionvscodeminecraftbedrockdevelopmentextension",
+        "mojang-studios.minecraft-debugger",
+        "arcensoth.language-mcfunction"
+    ],
+    "unwantedRecommendations": [
+        "jannisx11.snowstorm"
+    ]
+} 
