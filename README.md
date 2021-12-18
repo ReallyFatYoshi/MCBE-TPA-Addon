@@ -1,4 +1,31 @@
-# MCBE-TPA-Addon
+<!--
+This README.md template was NOT orginally created by me(ReallyFatYoshi)! This is a fork of:
+https://github.com/othneildrew/Best-README-Template
+-->
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+<a href="https://github.com/ReallyFatYoshi/addon-jam">
+    <img src="https://github.com/ReallyFatYoshi/addon-jam/blob/main/Behavour%20Pack/pack_icon.png?raw=true" alt="Logo" width="80" height="80">
+  </a>
+  <h3 align="center"><u>MCBE TPA Add-on</u></h3>
+
+  <p align="center" style="font-size:16px;">
+    <a href="https://github.com/ReallyFatYoshi/MCBE-TPA-Addon">View Demo</a>
+    ·
+    <a href="https://github.com/ReallyFatYoshi/MCBE-TPA-Addon/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/ReallyFatYoshi/MCBE-TPA-Addon/issues">Request Feature</a>
+  </p>
+</p>
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Shippori+Antique&display=swap" rel="stylesheet">
@@ -26,3 +53,16 @@
 ![settings]
 
 [settings]:https://cdn.discordapp.com/attachments/918191255580721162/921578502673805362/unknown.png
+
+
+<!--Icons-->
+[contributors-shield]: https://img.shields.io/github/contributors/ReallyFatYoshi/MCBE-TPA-Addon.svg?style=for-the-badge
+[contributors-url]: https://github.com/ReallyFatYoshi/MCBE-TPA-Addon/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/ReallyFatYoshi/MCBE-TPA-Addon.svg?style=for-the-badge
+[forks-url]: https://github.com/ReallyFatYoshi/MCBE-TPA-Addon/network/members
+[stars-shield]: https://img.shields.io/github/stars/ReallyFatYoshi/MCBE-TPA-Addon.svg?style=for-the-badge
+[stars-url]: https://github.com/ReallyFatYoshi/MCBE-TPA-Addon/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ReallyFatYoshi/MCBE-TPA-Addon.svg?style=for-the-badge
+[issues-url]: https://github.com/ReallyFatYoshi/MCBE-TPA-Addon/issues
+[license-shield]: https://img.shields.io/github/license/ReallyFatYoshi/MCBE-TPA-Addon.svg?style=for-the-badge
+[license-url]: https://github.com/ReallyFatYoshi/MCBE-TPA-Addon/blob/main/LICENSE
