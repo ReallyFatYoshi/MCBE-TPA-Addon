@@ -1,0 +1,45 @@
+{
+  "format_version": "1.18.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "tpaaddon:tpa_request_menu",
+      "is_spawnable": false,
+      "is_summonable": true
+    },
+    "component_groups": {
+      "kill": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": { "family": ["tpa_request_menu"] },
+      "minecraft:health": { "value": 10, "max": 10 },
+      "minecraft:damage_sensor": {
+        "triggers": { "cause": "all", "deals_damage": false }
+      },
+      "minecraft:collision_box": {
+        "height":0.01,
+        "width":0.01
+      },
+      "minecraft:nameable": {
+        "always_show":true,
+        "allow_name_tag_renaming":false
+      },
+      "minecraft:timer": {
+        "looping": true,
+        "time": 15,
+        "time_down_event": {
+          "event":"kill" 
+        }
+      },
+      "minecraft:npc": { }
+    },
+    "events": { 
+      "kill": {
+        "add": {
+          "component_groups": [ "kill" ]
+        }
+      }
+    }
+  }
+}

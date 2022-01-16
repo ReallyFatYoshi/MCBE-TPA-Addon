@@ -1,10 +1,18 @@
-import config from "../../config.js";
 import { runCMDS } from "../utilities.js";
 
 class commandbuilder {
     constructor() {
         this.commands = [];
+        this.config = {};
     };
+
+    /**
+     * @method updateConfig Used to update the config file in commands.
+     * @param {Array<T>} data Config Data.
+     */
+    updateConfig(data) {
+        this.config = data;
+    }
 
     /**
      * @method invalid Sends invalid syntax message to the command invoker.
@@ -15,7 +23,7 @@ class commandbuilder {
      invalidSyntax(cmdName,name,error) {
         return runCMDS([
             `playsound note.bass "${name}"`,
-            `tellraw "${name}" {"rawtext":[{"text":"§c"},{"translate":"commands.generic.syntax", "with": ["${config.commandPrefix}${cmdName} ","${error[0]}","${error.filter((t,i)=>{if (i!==0) return t;}).join(" ")}"]}]}`
+            `tellraw "${name}" {"rawtext":[{"text":"§c"},{"translate":"commands.generic.syntax", "with": ["${this.config.commandPrefix}${cmdName} ","${error[0]}","${error.filter((t,i)=>{if (i!==0) return t;}).join(" ")}"]}]}`
         ]);
     }
 
@@ -27,7 +35,7 @@ class commandbuilder {
      */
      check(cmdName,msg,args) {
         let name = msg.sender.nameTag;
-        let command = this.commands.some((cmd)=>cmd.data.commandName.toLowerCase()===cmdName.toLowerCase() || cmd.data.aliases && cmd.data.aliases.includes(cmdName));
+        let command = this.commands.some((cmd)=>(cmd.data?.admin_only !== true || cmd.data?.admin_only === true && this.config.admins.includes(name)) && (cmd.data.commandName.toLowerCase()===cmdName.toLowerCase() || cmd.data.aliases && cmd.data.aliases.includes(cmdName)));
         if (!command) return runCMDS([
             `playsound note.bass "${name}"`,
             `tellraw "${name}" {"rawtext":[{"text":"§c"},{"translate":"commands.generic.unknown", "with": ["§f${cmdName}§c"]}]}`
@@ -38,10 +46,15 @@ class commandbuilder {
 
     /**
      * @method getList Returns a string with all the available commands with their descriptions.
+     * @param {String} name Username
      */
-    getList() {
-        let cmds = this.commands.map((cmd)=>{ return {cmd:cmd.data.commandName,description:cmd.data.description} });
-        return cmds;
+    getList(name) {
+        let returnArray = [];
+        this.commands.map((cmd)=>{ 
+            if (cmd.data?.private === true || cmd.data?.admin_only && !this.config.admins.includes(name)) return; 
+            returnArray.push({cmd:cmd.data.commandName, description:cmd.data.description}); 
+        });
+        return returnArray;
     }
 
     /**
@@ -62,6 +75,7 @@ class commandbuilder {
         let command = false;
         this.commands.forEach((cmd)=>{
             if (cmd.data.commandName.toLowerCase()===cmdName.toLowerCase() || cmd.data.aliases && cmd.data.aliases.includes(cmdName)) {
+                if (cmd.data?.private === true || cmd.data?.admin_only && !this.config.admins.includes(name)) return;
                 command = true;
                 runCMDS([
                     `playsound note.hat "${name}"`,
@@ -82,7 +96,7 @@ class commandbuilder {
     #run(cmdName,name,args) {
         this.commands.forEach((cmd)=>{
             if (cmd.data.commandName.toLowerCase()===cmdName.toLowerCase() || cmd.data.aliases && cmd.data.aliases.includes(cmdName)) {
-                cmd.callback(name,args);
+                if (!cmd.data.config) cmd.callback(name,args); else cmd.callback(this.config,name,args);
             };
         });
     }
@@ -94,8 +108,8 @@ export default commandBuilder;
 
 /**
  * @author Knight
- * @description This Add-on is created by Knight
- * @copyright 2021 Knight
+ * @description This Add-on was created by Knight
+ * @copyright 2021-2022 Knight
  * @discordUsername Knight#8191
  * @discordServer https://discord.gg/38f4A5MD86
  */

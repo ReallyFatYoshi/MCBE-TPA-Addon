@@ -1,0 +1,36 @@
+{
+  "format_version": "1.18.0",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "tpa_addon_request",
+        "text": "Click the buttons to accept or decline the teleport request.",
+        "on_close_commands":[
+          "/playsound block.beehive.exit @initiator",
+          "/event entity @s kill"
+        ],
+        "on_open_commands":[
+          "/playsound block.beehive.enter @initiator",
+          "/scoreboard players set @s mcbe-tpa_open 1",
+          "/scoreboard players reset @initiator mcbe-tpa_open"
+        ],
+        "buttons": [
+          {
+            "name": "§a§lAccept",            
+            "commands":[
+              "/scoreboard players set @initiator mcbe-tpa_accept 1",
+              "/event entity @s kill"
+            ]
+          },
+          {
+            "name": "§c§lDecline",
+            "commands":[
+              "/scoreboard players set @initiator mcbe-tpa_decline 1",
+              "/event entity @s kill"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
