@@ -1,5 +1,5 @@
 import commandBuilder from "../classes/commands.js";
-import { runCMDS, smartSearchName } from "../utilities.js";
+import { getNames, runCMDS, smartSearchName } from "../utilities.js";
 
 commandBuilder.add({
     commandName:"tpaadmin",
@@ -11,37 +11,34 @@ commandBuilder.add({
 },(name,args)=>{
     if (!args[0]) return commandBuilder.invalidSyntax("tpaconfig",name,[" "]);
     const text = args.join("");
-    const target = smartSearchName(text.replace(args[0],""));
+    const target = smartSearchName(text.replace(args[1],""));
+    const playerNames = getNames();
 
-    if (!target) return runCMDS([
+    if (args[0]==="hereall") runCMDS([
+        `playsound note.hat "${name}"`,
+        `tp @a "${name}"`,
+        `tellraw "${name}" {"rawtext":[{"text":"§a§lTPA§r§e You've teleported everyone to your location."}]}`
+    ]); else if (!["to","here"].includes(args[0])) commandBuilder.invalidSyntax("tpaadmin",name,[...args]);
+    
+    if (!playerNames.includes(target)) return runCMDS([
         `playsound note.bass "${name}"`,
         `tellraw "${name}" {"rawtext":[{"text":"§a§lTPA§c ${text.replace(args[0],"")} §r§cdoes not exist."}]}`
     ]);
 
     switch (args[0]) {
-        case "hereall":
-            runCMDS([
-                `playsound note.hat "${name}"`,
-                `tp @a "${name}"`,
-                `tellraw "${name}" {"rawtext":[{"text":"§a§lTPA§r§e You've teleported everyone to your location."}]}`
-            ])
-            break;
         case "here":
-            runCMDS([
+            return runCMDS([
                 `playsound note.hat "${name}"`,
                 `tp "${target}" "${name}"`,
                 `tellraw "${name}" {"rawtext":[{"text":"§a§lTPA§r§e You've teleported §l§c${target}§r§e to your location."}]}`
             ])
-            break;
         case "to":
-            runCMDS([
+            return runCMDS([
                 `playsound note.hat "${name}"`,
                 `tp "${name}" "${target}"`,
                 `tellraw "${name}" {"rawtext":[{"text":"§a§lTPA§r§e You've been teleported to §c§l${target}'s§r§e location."}]}`
-            ])
-            break;
+            ]);
         default:
-            commandBuilder.invalidSyntax("tpaadmin",name,[...args]);
-            break;
+            return commandBuilder.invalidSyntax("tpaadmin",name,[...args]);
     }
 });

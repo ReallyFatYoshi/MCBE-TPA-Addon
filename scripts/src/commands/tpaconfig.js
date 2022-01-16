@@ -9,9 +9,9 @@ commandBuilder.add({
     config:true,
     admin_only:true,
     usages:[
-        "tpaconfig commandPrefix <commandPrefix: string> | TPA command prefix.",
-        "tpaconfig expiresIn <Int: value> | How long it takes for an TPA request to expire.",
-        "tpaconfig tpaAcceptUI <Boolean: true/false> | If you want there to be a TPA Accept UI.",
+        "tpaconfig commandPrefix <commandPrefix: string> | TPA command prefix. (Leave value empty for Default)",
+        "tpaconfig expiresIn <Int: value> | How long it takes for an TPA request to expire. (Leave value empty for Default)",
+        "tpaconfig tpaAcceptUI <Boolean: true/false> | If you want there to be a TPA Accept UI. (Leave value empty for Default)",
     ],
 },(config,name,args)=>{
     if (!args[0]) return commandBuilder.invalidSyntax("tpaconfig",name,[""]);

@@ -1,3 +1,9 @@
+/*
+	Database By: Balloon
+	Discord Tag: baboonie#2522
+	Discord Bot: https://discord.gg/eUT6kEvS6h
+*/
+
 import {
 	World,
 	Commands
@@ -220,4 +226,10 @@ class Table {
 }
 
 let database = new Database()
-export default database
+export default database;
+
+/*
+	Database By: Balloon
+	Discord Tag: baboonie#2522
+	Discord Bot: https://discord.gg/eUT6kEvS6h
+*/
