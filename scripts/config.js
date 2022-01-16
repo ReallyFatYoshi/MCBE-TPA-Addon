@@ -10,7 +10,7 @@
 const config = {
     commandPrefix:"!", //Command Prefix.
     expiresIn:60, //In Seconds. 
-    tpaAcceptUI:true, //Tpa accept UI.
+    tpaAcceptUI:false, //Tpa accept UI.
     admins:[], //All the player names in this array will have access to administrator commands.
     exceptions:{
         enabled:false, //Exceptions are used to disable tpa commands on certain players for certain situations. 
