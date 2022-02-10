@@ -4,11 +4,11 @@ import TPA from "./src/classes/tpa.js";
 import commandBuilder from "./src/classes/commands.js";
 
 import { getNames, getScore, getTag, runCMDS } from "./src/utilities.js";
-import { World } from "mojang-minecraft";
+import { world } from "mojang-minecraft";
 
 import './src/imports.js';
 
-World.events.beforeChat.subscribe((msg)=>{
+world.events.beforeChat.subscribe((msg)=>{
     const newConfig = getConfig();
     
     if (!msg.message.startsWith(newConfig.commandPrefix)) return;
@@ -41,7 +41,7 @@ World.events.beforeChat.subscribe((msg)=>{
 });
 
 let ticks = 0;
-World.events.tick.subscribe(()=>{
+world.events.tick.subscribe(()=>{
     ticks++;
     if (ticks%20==0) {
         TPA.countDown();

@@ -5,8 +5,7 @@
 */
 
 import {
-	World,
-	Commands
+	world
 } from 'mojang-minecraft'
 
 function textToBinary(text) {
@@ -17,7 +16,7 @@ function textToBinary(text) {
 
 function runCommand(command, dimension) {
 	try {
-		return Commands.run(command, World.getDimension(dimension ?? 'overworld'))
+		return { ...world.getDimension(dimension ?? 'overworld').runCommand(command) }
 	} catch (e) {}
 }
 

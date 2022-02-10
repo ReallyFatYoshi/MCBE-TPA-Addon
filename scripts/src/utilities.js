@@ -1,4 +1,4 @@
-import { Commands, World } from 'mojang-minecraft';
+import { world } from 'mojang-minecraft';
 
 /** 
  * @param {String} command Command. 
@@ -8,7 +8,7 @@ import { Commands, World } from 'mojang-minecraft';
 */
 function runCMD(command,dimension,noError) {
     try {
-        return { error: false, ...Commands.run(`${command}`,World.getDimension(`${dimension ?? "overworld" }`)) };
+        return { error: false, ...world.getDimension(dimension ?? "overworld").runCommand(command) };
     } catch(e) {
         if (!noError) console.warn(`The following command failed to run: ${command}`);
         return { error: e, result: null };
@@ -43,7 +43,7 @@ function runCMDS(commandArray,dimension) {
  * @return {Array<String>} Returns an Array with player names.
  */
  function getNames() {
-    let playernames = World.getPlayers()
+    let playernames = [...world.getPlayers()];
     playernames = playernames.map(t=>t.nameTag);
     return playernames;
 };
