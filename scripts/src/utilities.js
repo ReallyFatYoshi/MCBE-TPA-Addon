@@ -1,8 +1,8 @@
-import { world } from 'mojang-minecraft';
+import { Dimension, world } from 'mojang-minecraft';
 
 /** 
  * @param {String} command Command. 
- * @param {String} dimension Dimension. Dimensions: overworld | nether | the end
+ * @param {Dimension} dimension Dimension. Dimensions: overworld | nether | the end
  * @param {Boolean} noError If it returns an error if one occurs or not.
  * @returns {String} Returns an array.
 */
@@ -17,8 +17,8 @@ function runCMD(command,dimension,noError) {
 
 /** 
  * @param {Array<String>} commandArray Commands.
- * @param {String} dimension The dimension command should be run in. If left blank it will run in the: OverWorld. 
- * @returns {Array<String>} Returns the following array for each object in the array: {"error": false or error message, statusMessage:String} .
+ * @param {Dimension} dimension The dimension command should be run in. If left blank it will run in the: overworld. 
+ * @returns {Array<String>} Returns an array for each object in the array.
  */
 function runCMDS(commandArray,dimension) {
     for (let i=0; i<commandArray.length;++i) {
@@ -29,7 +29,7 @@ function runCMDS(commandArray,dimension) {
 /** 
  * @param {String} username Player Name.
  * @param {String} tag Tag.
- * @return {Boolean} Returns True/False.
+ * @return {Boolean}
  */
  function getTag(username,tag) {
     let tags = runCMD(`tag "${username}" list`).statusMessage;
@@ -54,10 +54,10 @@ function runCMDS(commandArray,dimension) {
  * @return {Number} Returns scoreboard value.
  */
 function getScore(username,scoreboard) {
-    let result = runCMD(`scoreboard players test "${username}" "${scoreboard}" * *`,"overworld",true).statusMessage;
-    let score = result !== null ? parseInt(result.match(/(?<=Score).+(?=is)/g)):0;
+    const result = runCMD(`scoreboard players test "${username}" "${scoreboard}" * *`,"overworld",true);
+    const score = result.error ? 0:parseInt(result.statusMessage.match(/(?<=Score).+(?=is)/g));
     
-    return parseInt(score);
+    return score;
 }
 
 /** 
@@ -65,6 +65,7 @@ function getScore(username,scoreboard) {
  * @return {String|Boolean} Returns Player Name else false.
  */
  function smartSearchName(name) {
+    if (typeof name !== 'string') throw Error("Name arguement value isn't a string.")
     const names = getNames();
     const regexPattern = new RegExp('([a-zA-Z0-9]+)?'+name.toLowerCase()+'([a-zA-Z0-9]+)?','g');
     const newName = names.filter((n,i)=>{

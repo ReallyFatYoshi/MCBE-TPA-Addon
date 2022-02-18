@@ -59,10 +59,10 @@ class commandbuilder {
 
     /**
      * @method add Add command.
-     * @param {Array<String>} data Command Data.
+     * @param {{commandName:String,description:String,private?:Boolean,config?:Boolean,admin_only?:Boolean,usages:Array<String>,aliases?:Array<String>}} data Command Data.
      * @param {Function} callback Callback.
      */
-    add(data,callback) {
+    register(data,callback) {
         this.commands.push({data,callback});
     }
 

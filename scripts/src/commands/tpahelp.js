@@ -1,7 +1,7 @@
 import commandBuilder from "../classes/commands.js";
 import { runCMDS } from "../utilities.js"
 
-commandBuilder.add({
+commandBuilder.register({
     commandName:"tpahelp",
     description:"Used to get all available commands or infomation about a specific command.",
     config:true, 

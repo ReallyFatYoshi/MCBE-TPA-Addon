@@ -1,7 +1,7 @@
 /* 
     !WARNING!
         
-        All changes in this config file count globally as default settings to all your worlds that have this add-on enabled. 
+        All changes in this config file count globally as default setting to all your worlds that have this add-on enabled. 
         All changes done from the config command in game count only to that specific world.
     
     !WARNING!

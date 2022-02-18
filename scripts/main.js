@@ -3,7 +3,9 @@ import { getConfig } from "./src/newconfig.js";
 import TPA from "./src/classes/tpa.js";
 import commandBuilder from "./src/classes/commands.js";
 
+import './src/classes/tpa.js';
 import { getNames, getScore, getTag, runCMDS } from "./src/utilities.js";
+
 import { world } from "mojang-minecraft";
 
 import './src/imports.js';

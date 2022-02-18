@@ -2,7 +2,7 @@ import commandBuilder from "../classes/commands.js";
 import TPA from "../classes/tpa.js";
 import { getNames, runCMDS, smartSearchName } from "../utilities.js";
 
-commandBuilder.add({
+commandBuilder.register({
     commandName:"tpasend",
     description:"Sends tpa request to the specified player you want to teleport to.",
     usages:["tpasend <target: playerName>"],

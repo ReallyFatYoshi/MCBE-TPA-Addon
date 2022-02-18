@@ -1,7 +1,7 @@
 import commandBuilder from "../classes/commands.js";
 import TPA from "../classes/tpa.js";
 
-commandBuilder.add({
+commandBuilder.register({
     commandName:"tpaaccept",
     description:"Used to accept an incoming tpa request.",
     config:true,
