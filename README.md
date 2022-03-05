@@ -25,6 +25,7 @@ https://github.com/othneildrew/Best-README-Template
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+![GitHub All Releases](https://img.shields.io/github/downloads/ReallyFatYoshi/MCBE-TPA-Addon/total) 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
