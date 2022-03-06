@@ -26,6 +26,7 @@ https://github.com/othneildrew/Best-README-Template
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 ![GitHub All Releases](https://img.shields.io/github/downloads/ReallyFatYoshi/MCBE-TPA-Addon/total?style=for-the-badge&logo=appveyor) 
+![Github Current Release](https://img.shields.io/github/v/release/ReallyFatYoshi/MCBE-TPA-ADDON?display_name=tag&style=for-the-badge&logo=appveyor)
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
