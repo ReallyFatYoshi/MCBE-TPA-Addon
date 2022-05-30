@@ -13,25 +13,5 @@ version: 2
  # Look for a `Dockerfile` in the `root` 
  directory directory: "/" 
  # Check for updates once a daily
- schedule: interval: "daily"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ schedule: 
+  interval: "daily"
