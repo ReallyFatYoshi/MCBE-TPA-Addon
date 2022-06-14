@@ -26,7 +26,8 @@
       ]
     },
     {
-      "type": "javascript",
+      "type": "script",
+      "language": "javascript",
       "uuid": "118af3b1-6576-ba9d-9bb4-3cf95b1ce4bf",
       "version": [
         1,
