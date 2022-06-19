@@ -32,7 +32,7 @@ https://github.com/othneildrew/Best-README-Template
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Shippori+Antique&display=swap" rel="stylesheet">
 
-<h3 style="color:red;font-family: 'Anton', sans-serif; font-family: 'Shippori Antique', sans-serif;"><strong>NOTE: </strong>This add-on only works for Minecraft Bedrock Version 1.18.10+</h3>
+<h3 style="color:red;font-family: 'Anton', sans-serif; font-family: 'Shippori Antique', sans-serif;"><strong>NOTE: </strong>This add-on only supports Minecraft Bedrock Versions 1.18.10-1.18.32, 1.19+</h3>
 <h3 style="font-weight:bold;color:gray;">Commands:</h3>
 <ul style="list-style-type:none;">
     <li>
